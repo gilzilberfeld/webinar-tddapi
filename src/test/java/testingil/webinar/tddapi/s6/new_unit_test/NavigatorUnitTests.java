@@ -1,10 +1,15 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s6.new_unit_test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import testingil.webinar.tddapi.s6.Location;
+import testingil.webinar.tddapi.s6.Distance;
+import testingil.webinar.tddapi.s6.Navigator;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class NavigatorUnitTests {
