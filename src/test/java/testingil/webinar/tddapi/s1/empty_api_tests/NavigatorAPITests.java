@@ -3,11 +3,7 @@ package testingil.webinar.tddapi.s1.empty_api_tests;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.LessThan;
 
 class NavigatorAPITests {
 
