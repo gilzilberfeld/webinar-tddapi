@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s3.api_tests_calling_real_controller;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.lessThan;
@@ -17,7 +17,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testingil.webinar.tddapi.work.Distance;
+import testingil.webinar.tddapi.s3.Distance;
+import testingil.webinar.tddapi.s3.Location;
+import testingil.webinar.tddapi.s3.NavigationController;
 
 @SpringBootTest
 class NavigatorAPITests {
