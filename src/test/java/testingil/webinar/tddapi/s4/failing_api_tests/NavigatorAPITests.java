@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s4.failing_api_tests;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.lessThan;
@@ -10,17 +10,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testingil.webinar.tddapi.work.Distance;
+import testingil.webinar.tddapi.s4.Location;
+import testingil.webinar.tddapi.s4.NavigationController4;
+import testingil.webinar.tddapi.s4.Distance;
 
 @WebMvcTest
 class NavigatorAPITests {
@@ -48,18 +47,18 @@ class NavigatorAPITests {
 	MockMvc mockMvc;
 	@BeforeEach
 	public void setup() {
-		this.mockMvc = MockMvcBuilders.standaloneSetup(new NavigationController()).build();
+		this.mockMvc = MockMvcBuilders.standaloneSetup(new NavigationController4()).build();
 	}
 	
 	private void setDestination(Location location) throws JsonProcessingException, Exception {
-		mockMvc.perform(post("/navigator/destination")
+		mockMvc.perform(post("/navigator4/destination")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(toJson(location)))
         .andExpect(status().isOk());
 	}
 
 	private void setStartPoint(Location location) throws Exception {
-		mockMvc.perform(post("/navigator/startpoint")
+		mockMvc.perform(post("/navigator4/startpoint")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(toJson(location)))
         .andExpect(status().isOk());
@@ -71,7 +70,7 @@ class NavigatorAPITests {
 	
 	private int distanceToDestination() throws JsonProcessingException, Exception {
 		MvcResult result = 
-			mockMvc.perform(get("/navigator/distance"))
+			mockMvc.perform(get("/navigator4/distance"))
 	        .andExpect(status().isOk())
 	        .andReturn();
 		

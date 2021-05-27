@@ -1,0 +1,5 @@
+Step 0: Created empty project
+Step 1: Created "readable" tests, not calling a controller
+Step 2: Created tests calling test controller, failing on 404 (no urls exposed)
+Step 3: Moved controller and data to production, still 404
+Step 4: Added URL annotations, failing on 500 (Distance cannot be serialized), add value distance and now failing on logic. At this point, I started using a differnt controller and url designation

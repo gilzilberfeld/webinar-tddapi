@@ -12,7 +12,7 @@ class NavigatorAPITests {
 		Location location = new Location("New York");
 		setStartPoint(location);
 		setDestination(location);
-		assertThat(distanceTo(location), is(0));
+		assertThat(distanceToDestination(), is(0));
 	}
 
 	@Test
@@ -21,15 +21,15 @@ class NavigatorAPITests {
 		setStartPoint(initialLocation);
 		Location destination = new Location("Los Angeles");;
 		setDestination(destination);
-		int initialDistance = distanceTo(destination);
+		int initialDistance = distanceToDestination();
 		Location midLocation = new Location("Dallas");
 		driveTo(midLocation); 
-		assertThat(distanceTo(destination), is(lessThan(initialDistance)));
+		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
 
 
 
-	private int distanceTo(Location location) {
+	private int distanceToDestination() {
 		return -1;
 	}
 

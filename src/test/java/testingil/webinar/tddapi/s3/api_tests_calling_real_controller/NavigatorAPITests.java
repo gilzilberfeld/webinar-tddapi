@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -21,7 +22,7 @@ import testingil.webinar.tddapi.s3.Distance;
 import testingil.webinar.tddapi.s3.Location;
 import testingil.webinar.tddapi.s3.NavigationController;
 
-@SpringBootTest
+@WebMvcTest
 class NavigatorAPITests {
 
 	@Test
@@ -29,7 +30,7 @@ class NavigatorAPITests {
 		Location location = new Location("New York");
 		setStartPoint(location);
 		setDestination(location);
-		assertThat(distanceTo(location), is(0));
+		assertThat(distanceToDestination(), is(0));
 	}
 
 	@Test
@@ -38,10 +39,10 @@ class NavigatorAPITests {
 		setStartPoint(initialLocation);
 		Location destination = new Location("Los Angeles");;
 		setDestination(destination);
-		int initialDistance = distanceTo(destination);
+		int initialDistance = distanceToDestination();
 		Location midLocation = new Location("Dallas");
 		driveTo(midLocation); 
-		assertThat(distanceTo(destination), is(lessThan(initialDistance)));
+		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
 
 	MockMvc mockMvc;
@@ -66,9 +67,9 @@ class NavigatorAPITests {
 		setStartPoint(midLocation);
 	}
 	
-	private int distanceTo(Location location) throws JsonProcessingException, Exception {
-		MvcResult result = mockMvc.perform(get("/navigator/distance")
-				.content(toJson(location)))
+	private int distanceToDestination() throws JsonProcessingException, Exception {
+		MvcResult result = 
+		mockMvc.perform(get("/navigator/distance"))
         .andExpect(status().isOk())
         .andReturn();
 		

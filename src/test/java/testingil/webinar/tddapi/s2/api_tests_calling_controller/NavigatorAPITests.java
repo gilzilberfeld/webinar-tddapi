@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -17,7 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@SpringBootTest
+@WebMvcTest
 class NavigatorAPITests {
 
 	@Test
@@ -25,7 +26,7 @@ class NavigatorAPITests {
 		Location location = new Location("New York");
 		setStartPoint(location);
 		setDestination(location);
-		assertThat(distanceTo(location), is(0));
+		assertThat(distanceToDestination(), is(0));
 	}
 
 	@Test
@@ -34,10 +35,10 @@ class NavigatorAPITests {
 		setStartPoint(initialLocation);
 		Location destination = new Location("Los Angeles");;
 		setDestination(destination);
-		int initialDistance = distanceTo(destination);
+		int initialDistance = distanceToDestination();
 		Location midLocation = new Location("Dallas");
 		driveTo(midLocation); 
-		assertThat(distanceTo(destination), is(lessThan(initialDistance)));
+		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
 
 	MockMvc mockMvc;
@@ -62,11 +63,11 @@ class NavigatorAPITests {
 		setStartPoint(midLocation);
 	}
 	
-	private int distanceTo(Location location) throws JsonProcessingException, Exception {
-		MvcResult result = mockMvc.perform(get("/navigator/distance")
-				.content(toJson(location)))
-        .andExpect(status().isOk())
-        .andReturn();
+	private int distanceToDestination() throws JsonProcessingException, Exception {
+		MvcResult result = 
+			mockMvc.perform(get("/navigator/distance"))
+	        .andExpect(status().isOk())
+	        .andReturn();
 		
 		String content = result.getResponse().getContentAsString();
 		Distance distance = distanceFromJson(content);
