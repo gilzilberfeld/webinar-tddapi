@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.s10.refactoring;
+package testingil.webinar.tddapi.s10.refactoring_provider;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

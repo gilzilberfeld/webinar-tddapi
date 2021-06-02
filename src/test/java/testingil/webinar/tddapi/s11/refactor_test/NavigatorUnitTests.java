@@ -1,14 +1,14 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s11.refactor_test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
 import static org.mockito.Mockito.mock;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import testingil.webinar.tddapi.s11.Distance;
+import testingil.webinar.tddapi.s11.Location;
+import testingil.webinar.tddapi.s11.Navigator;
+import testingil.webinar.tddapi.s11.DistanceProvider;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
