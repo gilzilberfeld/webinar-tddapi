@@ -7,4 +7,5 @@ Step 5: Added a unit test (and moved Navigator, Exception to Production)
 Step 6: Change unit test, cannot be created without location. Test fails, need to change Distance (but that will pass the first test)
 Step 7: Passing unit test
 Step 8: Added failing unit test, requires refactoring for mocking
-Step 9: Comment second test, change first test to include and save the distance provider. 
+Step 9: Comment second test, change first test to include and save the distance provider.
+Step 10: Created the Provider's interface (which is really a mock provider), first test is passing 
