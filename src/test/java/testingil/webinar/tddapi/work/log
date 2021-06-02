@@ -11,3 +11,4 @@ Step 9: Comment second test, change first test to include and save the distance 
 Step 10: Created the Provider's interface (which is really a mock provider), first test is passing 
 Step 11: Refactor the test to mock the new Provider.
 Step 12: Uncomment second unit test, modify to use mock.
+Step 13: Pass the test, fixing Distance

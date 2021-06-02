@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s13.pass_unit_test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -9,6 +9,11 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+
+import testingil.webinar.tddapi.s13.Distance;
+import testingil.webinar.tddapi.s13.Location;
+import testingil.webinar.tddapi.s13.Navigator;
+import testingil.webinar.tddapi.s13.DistanceProvider;
 
 class NavigatorUnitTests {
 

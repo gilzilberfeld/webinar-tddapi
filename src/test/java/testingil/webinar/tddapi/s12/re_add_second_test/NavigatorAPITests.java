@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.s2.re_add_second_test;
+package testingil.webinar.tddapi.s12.re_add_second_test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
