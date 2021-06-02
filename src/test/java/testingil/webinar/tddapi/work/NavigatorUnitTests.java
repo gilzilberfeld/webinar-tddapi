@@ -51,6 +51,7 @@ class NavigatorUnitTests {
 
 		nav = new Navigator(startingPoint, mockDistService);
 		nav.setDestination(dest);
+		nav.getDistanceFromDestination();
 
 		verify(mockDistService).getDistance(startingPoint, dest);
 	}

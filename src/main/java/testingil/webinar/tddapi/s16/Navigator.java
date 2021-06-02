@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s16;
 
 public class Navigator {
 
