@@ -12,3 +12,10 @@ Step 10: Created the Provider's interface (which is really a mock provider), fir
 Step 11: Refactor the test to mock the new Provider.
 Step 12: Uncomment second unit test, modify to use mock.
 Step 13: Pass the test, fixing Distance
+Step 14: Refactor UT: Add BeforeEach, create fields, extract method, 	
+
+NEXT: Add UT for the SetDestination.
+Then: Refactor controller to inject the Provider bean.
+Then: Pass the API test
+Then: Add MockBean to the Provider
+The
