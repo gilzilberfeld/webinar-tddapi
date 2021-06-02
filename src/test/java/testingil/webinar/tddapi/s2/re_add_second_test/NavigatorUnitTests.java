@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s2.re_add_second_test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,10 +13,10 @@ import org.mockito.Mockito;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import testingil.webinar.tddapi.work.Distance;
-import testingil.webinar.tddapi.work.Location;
-import testingil.webinar.tddapi.work.Navigator;
-import testingil.webinar.tddapi.work.DistanceProvider;
+import testingil.webinar.tddapi.s12.Distance;
+import testingil.webinar.tddapi.s12.Location;
+import testingil.webinar.tddapi.s12.Navigator;
+import testingil.webinar.tddapi.s12.DistanceProvider;
 
 class NavigatorUnitTests {
 
