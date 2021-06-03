@@ -15,6 +15,8 @@ Step 13: Pass the test, fixing Distance
 Step 14: Refactor UT: Add BeforeEach, create fields, extract method, 	
 Step 15: Add UT for the empty SetDestination.
 Step 16: Pass the test by adding code to navigator.
+Step 17: Fill controller with calls to Navigator
+Step 18: Add configuration and inject provider (test fail).
 
 Then: Refactor controller to inject the Provider bean.
 Then: Pass the API test
