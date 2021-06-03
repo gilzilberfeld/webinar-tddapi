@@ -21,5 +21,6 @@ Step 19: Refactor with unit tests passing -
 			separate Navigator constructor from startpoint, 
 			but controller initialization happens before provider is injected
 			so API tests fail on null. 
-Step 20(final): Inject Navigator instead of creating it.
+Step 20(final): Inject Navigator instead of creating it. 
+				Also some test refactoring.
 
