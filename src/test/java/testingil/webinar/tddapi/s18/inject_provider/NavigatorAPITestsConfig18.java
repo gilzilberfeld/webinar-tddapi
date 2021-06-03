@@ -11,15 +11,15 @@ import testingil.webinar.tddapi.s18.DistanceProvider;
 import testingil.webinar.tddapi.s18.NavigationController18;
 
 @Configuration
-public class NavigatorAPITestsConfig {
+public class NavigatorAPITestsConfig18 {
 	
 	@Bean
-	public NavigationController18 navigationController() {
+	public NavigationController18 navigationController18() {
 		return new NavigationController18();
 	}
 	
 	@Bean
-	public DistanceProvider distanceProvider() {
+	public DistanceProvider distanceProvider18() {
 		return mock(DistanceProvider.class);
 	}
 }

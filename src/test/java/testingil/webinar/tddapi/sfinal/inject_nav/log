@@ -21,8 +21,5 @@ Step 19: Refactor with unit tests passing -
 			separate Navigator constructor from startpoint, 
 			but controller initialization happens before provider is injected
 			so API tests fail on null. 
+Step 20(final): Inject Navigator instead of creating it.
 
-Then: Refactor controller to inject the Provider bean.
-Then: Pass the API test
-Then: Add MockBean to the Provider
-The

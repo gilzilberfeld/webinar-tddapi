@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.sfinal.inject_nav;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,6 +23,11 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import testingil.webinar.tddapi.sfinal.Distance;
+import testingil.webinar.tddapi.sfinal.DistanceProvider;
+import testingil.webinar.tddapi.sfinal.Location;
+import testingil.webinar.tddapi.sfinal.NavigationController;
+
 @WebMvcTest
 @ContextConfiguration(classes = NavigatorAPITestsConfig.class)
 class NavigatorAPITests {
@@ -35,49 +40,31 @@ class NavigatorAPITests {
 	public void setup() {
 		this.mockMvc = MockMvcBuilders
 				.standaloneSetup(navController).build();
-		reset(mockProvider);
 	}
 
 	@Test
 	void navigate_to_same_location_distance_is_zero() throws Exception {
-		Distance distance = new Distance();
-		distance.value = 0;
-		
-		when(mockProvider.getDistance(
-				Mockito.any(Location.class), 
-				Mockito.any(Location.class)))
-			.thenReturn(distance);
+		set_distance_to_be(0);
 
+		setStartPoint(new Location("New York"));
+		setDestination(new Location("New York"));
 		
-		Location location = new Location("New York");
-		setStartPoint(location);
-		setDestination(location);
 		assertThat(distanceToDestination(), is(0));
 	}
 
+
 	@Test
 	void navigate_and_drive_to_another_location_distance_is_reduced() throws Exception {
-		Distance initDistance = new Distance();
-		initDistance.value = 2500;
-		
-		Distance midDistance = new Distance();
-		midDistance.value = 1400;
-		
-		when(mockProvider.getDistance(
-				Mockito.any(Location.class), 
-				Mockito.any(Location.class)))
-			.thenReturn(initDistance)
-			.thenReturn(midDistance);
+		set_distances_to_be(2500, 1400);
 
-		Location initialLocation = new Location("New York");
-		setStartPoint(initialLocation);
-		Location destination = new Location("Los Angeles");;
-		setDestination(destination);
+		setStartPoint(new Location("New York"));
+		setDestination(new Location("Los Angeles"));
 		int initialDistance = distanceToDestination();
-		Location midLocation = new Location("Dallas");
-		driveTo(midLocation); 
+		
+		driveTo(new Location("Dallas")); 
 		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
+
 
 	
 	
@@ -118,6 +105,29 @@ class NavigatorAPITests {
 	private String toJson(Location loc) throws Exception {
 		ObjectMapper objectMapper = new ObjectMapper();
 		return objectMapper.writeValueAsString(loc);
+	}
+
+	private void set_distance_to_be(int distanceInMiles) {
+		Distance distance = new Distance();
+		distance.value = distanceInMiles;
+		when(mockProvider.getDistance(
+				Mockito.any(Location.class), 
+				Mockito.any(Location.class)))
+		.thenReturn(distance);
+	}
+	
+	private void set_distances_to_be(int distance1, int distance2) {
+		Distance initDistance = new Distance();
+		initDistance.value = distance1;
+		
+		Distance midDistance = new Distance();
+		midDistance.value = distance2;
+		
+		when(mockProvider.getDistance(
+				Mockito.any(Location.class), 
+				Mockito.any(Location.class)))
+			.thenReturn(initDistance)
+			.thenReturn(midDistance);
 	}
 
 }

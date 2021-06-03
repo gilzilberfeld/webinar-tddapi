@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.sfinal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -16,11 +16,8 @@ public class NavigationController {
 	
 	@Autowired
 	DistanceProvider distProvider;
+	@Autowired
 	Navigator nav;
-
-	public NavigationController() {
-		nav = new Navigator(distProvider) ;
-	}
 	
 	@PostMapping("/destination")
 	public void setDestination(@RequestBody Location location) {

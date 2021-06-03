@@ -29,7 +29,7 @@ import testingil.webinar.tddapi.s19.Location;
 import testingil.webinar.tddapi.s19.NavigationController19;
 
 @WebMvcTest
-@ContextConfiguration(classes = NavigatorAPITestsConfig.class)
+@ContextConfiguration(classes = NavigatorAPITestsConfig19.class)
 class NavigatorAPITests {
 
 	MockMvc mockMvc;

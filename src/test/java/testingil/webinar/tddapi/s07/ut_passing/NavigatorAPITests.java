@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import testingil.webinar.tddapi.s07.Location;
 import testingil.webinar.tddapi.s07.NavigationController7;
-import testingil.webinar.tddapi.work.Distance;
+import testingil.webinar.tddapi.sfinal.Distance;
 
 @WebMvcTest
 class NavigatorAPITests {
