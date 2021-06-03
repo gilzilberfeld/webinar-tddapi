@@ -17,6 +17,10 @@ Step 15: Add UT for the empty SetDestination.
 Step 16: Pass the test by adding code to navigator.
 Step 17: Fill controller with calls to Navigator
 Step 18: Add configuration and inject provider (test fail).
+Step 19: Refactor with unit tests passing - 
+			separate Navigator constructor from startpoint, 
+			but controller initialization happens before provider is injected
+			so API tests fail on null. 
 
 Then: Refactor controller to inject the Provider bean.
 Then: Pass the API test

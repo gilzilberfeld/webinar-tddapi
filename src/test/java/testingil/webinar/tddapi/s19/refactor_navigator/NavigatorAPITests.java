@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.s18.inject_provider;
+package testingil.webinar.tddapi.s19.refactor_navigator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,17 +23,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import testingil.webinar.tddapi.s18.Distance;
-import testingil.webinar.tddapi.s18.DistanceProvider;
-import testingil.webinar.tddapi.s18.Location;
-import testingil.webinar.tddapi.s18.NavigationController18;
+import testingil.webinar.tddapi.s19.Distance;
+import testingil.webinar.tddapi.s19.DistanceProvider;
+import testingil.webinar.tddapi.s19.Location;
+import testingil.webinar.tddapi.s19.NavigationController19;
 
 @WebMvcTest
 @ContextConfiguration(classes = NavigatorAPITestsConfig.class)
 class NavigatorAPITests {
 
 	MockMvc mockMvc;
-	@Autowired NavigationController18 navController;
+	@Autowired NavigationController19 navController;
 	@Autowired DistanceProvider mockProvider;
 
 	@BeforeEach
@@ -86,14 +86,14 @@ class NavigatorAPITests {
 	
 	
 	private void setDestination(Location location) throws JsonProcessingException, Exception {
-		mockMvc.perform(post("/navigator18/destination")
+		mockMvc.perform(post("/navigator19/destination")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(toJson(location)))
         .andExpect(status().isOk());
 	}
 
 	private void setStartPoint(Location location) throws Exception {
-		mockMvc.perform(post("/navigator18/startpoint")
+		mockMvc.perform(post("/navigator19/startpoint")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(toJson(location)))
         .andExpect(status().isOk());
@@ -105,7 +105,7 @@ class NavigatorAPITests {
 	
 	private int distanceToDestination() throws JsonProcessingException, Exception {
 		MvcResult result = 
-			mockMvc.perform(get("/navigator18/distance"))
+			mockMvc.perform(get("/navigator19/distance"))
 	        .andExpect(status().isOk())
 	        .andReturn();
 		

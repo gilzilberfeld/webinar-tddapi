@@ -1,4 +1,4 @@
-package testingil.webinar.tddapi.work;
+package testingil.webinar.tddapi.s19;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/navigator")
-public class NavigationController {
-
-	
+@RequestMapping("/navigator19")
+public class NavigationController19 {
 	
 	@Autowired
 	DistanceProvider distProvider;
 	Navigator nav;
 
-	public NavigationController() {
+	public NavigationController19() {
 		nav = new Navigator(distProvider) ;
 	}
 	
