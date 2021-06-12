@@ -1,26 +1,45 @@
 Step 0: Created empty project
 Step 1: Created "readable" tests, not calling a controller
-Step 2: Created tests calling test controller, failing on 404 (no urls exposed)
-Step 3: Moved controller and data to production, still 404
-Step 4: Added URL annotations, failing on 500 (Distance cannot be serialized), add value distance and now failing on logic. At this point, I started using a different controller and url designation
-Step 5: Added a unit test (and moved Navigator, Exception to Production)
-Step 6: Change unit test, cannot be created without location. Test fails, need to change Distance (but that will pass the first test)
-Step 7: Passing unit test
-Step 8: Added failing unit test, requires refactoring for mocking
-Step 9: Comment second test, change first test to include and save the distance provider.
-Step 10: Created the Provider's interface (which is really a mock provider), first test is passing 
-Step 11: Refactor the test to mock the new Provider.
+Step 2: Created tests calling test controller
+		failing on 404 (no urls exposed)
+Step 3: Moved controller and data to production
+		still 404 (no urls exposed)
+Step 4: Added URL annotations
+		failing on 500 (Distance cannot be serialized)
+		Added MediaType
+		Add value distance and now failing on logic. 
+		[At this point, I started using a different controller and url designation]
+Step 5: Added a unit test 
+		Moved Navigator, Exception to Production
+Step 6: Rethink exception, why fail if constructor gets initial location
+		Change unit test
+		Test fails, 
+Step 7: Change Distance 
+		Passing unit test
+Step 8: Added failing unit test
+		Requires refactoring for mocking the distance provider
+Step 9: Comment second test
+		Change first test to include and save the distance provider.
+Step 10:Created the Provider's interface
+		Move distance calculation to the provider 
+		First test is passing 
+Step 11: Refactor the first test to mock the new Provider.
 Step 12: Uncomment second unit test, modify to use mock.
-Step 13: Pass the test, fixing Distance
+Step 13: Add the logic calculation to Distance
+		 Pass the test
 Step 14: Refactor UT: Add BeforeEach, create fields, extract method, 	
-Step 15: Add UT for the empty SetDestination.
-Step 16: Pass the test by adding code to navigator.
+Step 15: Add UT for passing the correct info to the provider 
+		 Fails because of empty SetDestination.
+Step 16: Store the destination in Navigator
+		 Pass the test
+		 Unit tests are ok, we can move back to controller
 Step 17: Fill controller with calls to Navigator
-Step 18: Add configuration and inject provider (test fail).
-Step 19: Refactor with unit tests passing - 
-			separate Navigator constructor from startpoint, 
-			but controller initialization happens before provider is injected
-			so API tests fail on null. 
-Step 20(final): Inject Navigator instead of creating it. 
-				Also some test refactoring.
+Step 18: API Tests : Add configuration and inject provider 
+		 Test fail becuase we create Nav twice.
+		 We need to create once, but that means seperating from the initial location
+Step 19: Separate Navigator constructor from startpoint, 
+		 But controller initialization happens *before* provider is injected
+		 API tests fail on null. 
+Step final: Inject Navigator instead of creating it. 
+			Also some test refactoring.
 
