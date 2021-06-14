@@ -4,6 +4,4 @@ public class Location {
 
 	public Location(String city) {
 	}
-
-	
 }

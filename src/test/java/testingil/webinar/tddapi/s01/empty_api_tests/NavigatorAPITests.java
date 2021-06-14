@@ -19,11 +19,15 @@ class NavigatorAPITests {
 	void navigate_and_drive_to_another_location_distance_is_reduced() {
 		Location initialLocation = new Location("New York");
 		setStartPoint(initialLocation);
+		
 		Location destination = new Location("Los Angeles");;
 		setDestination(destination);
+		
 		int initialDistance = distanceToDestination();
+		
 		Location midLocation = new Location("Dallas");
 		driveTo(midLocation); 
+		
 		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
 

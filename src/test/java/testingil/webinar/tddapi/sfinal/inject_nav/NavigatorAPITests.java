@@ -65,8 +65,6 @@ class NavigatorAPITests {
 		assertThat(distanceToDestination(), is(lessThan(initialDistance)));
 	}
 
-
-	
 	
 	private void setDestination(Location location) throws JsonProcessingException, Exception {
 		mockMvc.perform(post("/navigator/destination")

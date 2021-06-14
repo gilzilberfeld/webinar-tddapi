@@ -28,8 +28,10 @@ class NavigatorUnitTests {
 	void distance_is_calculated_in_km() {
 		Location startingPoint = new Location("New York City");
 		Navigator nav = new Navigator(startingPoint);
+		
 		Location dest = new Location("Los Angeles");
 		nav.setDestination(dest);
+		
 		Distance distance = nav.getDistanceFromDestination();
 		assertThat(distance.inKm(), is(4000));
 	}

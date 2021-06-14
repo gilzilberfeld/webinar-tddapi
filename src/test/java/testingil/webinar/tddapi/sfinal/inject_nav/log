@@ -25,7 +25,7 @@ Step 10:Created the Provider's interface
 		First test is passing 
 Step 11: Refactor the first test to mock the new Provider.
 Step 12: Uncomment second unit test, modify to use mock.
-Step 13: Add the logic calculation to Distance
+Step 13: Add the logic calculation to Distance (*1.6)
 		 Pass the test
 Step 14: Refactor UT: Add BeforeEach, create fields, extract method, 	
 Step 15: Add UT for passing the correct info to the provider 
