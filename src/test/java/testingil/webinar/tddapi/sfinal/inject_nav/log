@@ -35,7 +35,7 @@ Step 16: Store the destination in Navigator
 		 Unit tests are ok, we can move back to controller
 Step 17: Fill controller with calls to Navigator
 Step 18: API Tests : Add configuration and inject provider 
-		 Test fail becuase we create Nav twice.
+		 Test fail because we create Nav twice.
 		 We need to create once, but that means seperating from the initial location
 Step 19: Separate Navigator constructor from startpoint, 
 		 But controller initialization happens *before* provider is injected
