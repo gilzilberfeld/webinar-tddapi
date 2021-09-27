@@ -2,17 +2,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NavigationApp;
-using NavigationAppTests.s01.empty_api_tests;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NavigationAppTests.s02.add_api_calling_code
+namespace NavigationApp.s02.add_api_calling_code
 {
     [TestClass]
-    public class NavigationAPITests
+    public class NavigationAPITests_S02
     {
         [TestMethod]
         public async Task navigate_to_same_location_distance_is_zero()

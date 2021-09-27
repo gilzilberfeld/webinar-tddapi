@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NavigationAppTests.s02.add_api_calling_code
+namespace NavigationApp.s02.add_api_calling_code
 {
     internal class Distance
     {

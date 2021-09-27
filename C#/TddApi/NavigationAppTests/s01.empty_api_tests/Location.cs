@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NavigationAppTests.s01.empty_api_tests
+namespace NavigationApp.s01.empty_api_tests
 {
     class Location
     {

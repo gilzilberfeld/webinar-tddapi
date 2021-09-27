@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NavigationApp.s02.add_api_calling_code
+namespace NavigationApp.s03.move_classes_to_app
 {
-    class Location
+    public class Location
     {
         public Location(string city)
         {

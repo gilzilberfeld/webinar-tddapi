@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NavigationAppTests.s01.empty_api_tests;
+using NavigationApp.s01.empty_api_tests;
 
-namespace NavigationAppTests.s01.empty_api_tests
+namespace NavigationApp.s01.empty_api_tests
 {
     [TestClass]
     public class NavigationAPITests_s01
