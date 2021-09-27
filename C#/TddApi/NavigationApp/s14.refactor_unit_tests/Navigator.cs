@@ -6,7 +6,6 @@ namespace NavigationApp.s14.refactor_unit_tests
     {
         DistanceProvider distProvider;
         Location startingPoint;
-        Location destination;
 
         public Navigator(Location loc, DistanceProvider distService)
         {
@@ -16,12 +15,12 @@ namespace NavigationApp.s14.refactor_unit_tests
 
         public Distance getDistanceFromDestination()
         {
-            return distProvider.getDistance(startingPoint, destination);
+            return distProvider.getDistance(startingPoint, startingPoint);
         }
 
         public void setDestination(Location dest)
         {
-            this.destination = dest;
+            
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace NavigationApp.s13.pass_second_test
+namespace NavigationApp.s15.add_unit_test
 {
     public class Navigator
     {
         DistanceProvider distProvider;
         Location startingPoint;
- 
+   
         public Navigator(Location loc, DistanceProvider distService)
         {
             distProvider = distService;
@@ -20,7 +20,7 @@ namespace NavigationApp.s13.pass_second_test
 
         public void setDestination(Location dest)
         {
- 
+            
         }
     }
 }
