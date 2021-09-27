@@ -44,7 +44,7 @@ namespace NavigationApp.s08.added_ut
 		{
 			var content = new StringContent(JsonConvert.SerializeObject(location),
 				Encoding.UTF8, "application/json");
-			var response = await client.PostAsync("/navigator06/destination", content);
+			var response = await client.PostAsync("/navigator08/destination", content);
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 		}
 
@@ -52,7 +52,7 @@ namespace NavigationApp.s08.added_ut
 		{
 			var content = new StringContent(JsonConvert.SerializeObject(location),
 				Encoding.UTF8, "application/json");
-			var response = await client.PostAsync("/navigator06/startpoint", content);
+			var response = await client.PostAsync("/navigator08/startpoint", content);
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 		}
 
@@ -63,7 +63,7 @@ namespace NavigationApp.s08.added_ut
 
 		private async Task<int> distanceToDestination()
 		{
-			var response = await client.GetAsync("/navigator06/distance");
+			var response = await client.GetAsync("/navigator08/distance");
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 			var body = await response.Content.ReadAsStringAsync();
 			Distance distance = JsonConvert.DeserializeObject<Distance>(body);

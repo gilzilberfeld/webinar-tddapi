@@ -4,7 +4,7 @@ using Moq;
 namespace NavigationApp.s11.refactor_test_with_mock
 {
     [TestClass]
-    public class NavigatorUnitTests_s11
+    public class NavigatorUnitTests_s12
     {
 
         [TestMethod]

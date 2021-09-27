@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NavigationApp.s06.new_unit_test
+namespace NavigationApp.s12.re_add_second_test
 {
     public class Distance
     {
@@ -8,7 +8,7 @@ namespace NavigationApp.s06.new_unit_test
 
         public int inKm()
         {
-            return -1;
+            return 0;
         }
     }
 }
