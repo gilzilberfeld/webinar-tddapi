@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NavigationApp.s15.add_unit_test
+namespace NavigationApp.s16.pass_unit_test
 {
     [TestClass]
     public class NavigationAPITests_s16
@@ -44,7 +44,7 @@ namespace NavigationApp.s15.add_unit_test
 		{
 			var content = new StringContent(JsonConvert.SerializeObject(location),
 				Encoding.UTF8, "application/json");
-			var response = await client.PostAsync("/navigator15/destination", content);
+			var response = await client.PostAsync("/navigator16/destination", content);
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 		}
 
@@ -52,7 +52,7 @@ namespace NavigationApp.s15.add_unit_test
 		{
 			var content = new StringContent(JsonConvert.SerializeObject(location),
 				Encoding.UTF8, "application/json");
-			var response = await client.PostAsync("/navigator15/startpoint", content);
+			var response = await client.PostAsync("/navigator16/startpoint", content);
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 		}
 
@@ -63,7 +63,7 @@ namespace NavigationApp.s15.add_unit_test
 
 		private async Task<int> distanceToDestination()
 		{
-			var response = await client.GetAsync("/navigator15/distance");
+			var response = await client.GetAsync("/navigator16/distance");
 			Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 			var body = await response.Content.ReadAsStringAsync();
 			Distance distance = JsonConvert.DeserializeObject<Distance>(body);

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace NavigationApp.s15.add_unit_test
+namespace NavigationApp.s16.pass_unit_test
 {
     [TestClass]
     public class NavigatorUnitTests_s16
