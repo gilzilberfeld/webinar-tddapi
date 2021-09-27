@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NavigationApp.s06.new_unit_test;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using NavigationApp.s07.unit_test_pass;
 
 namespace NavigationApp.Controllers
 {
     [ApiController]
-    [Route("navigator06")]
-    public class NavigationController_S06 : ControllerBase
+    [Route("navigator07")]
+    public class NavigationController_S07 : ControllerBase
     {
       
         [HttpGet]
