@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NavigationApp.s09.refactor_test_first;
+using NavigationApp.s11.refactor_test_with_mock;
 
 namespace NavigationApp.Controllers
 {
     [ApiController]
-    [Route("navigator09")]
-    public class NavigationController_S09 : ControllerBase
+    [Route("navigator11")]
+    public class NavigationController_S11 : ControllerBase
     {
       
         [HttpGet]
