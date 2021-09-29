@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace NavigationApp.s17.fill_controller
 {
     [TestClass]
-    public class NavigationAPITests_s17
+    public class NavigationAPITests_s18
     {
 	
         [TestMethod]

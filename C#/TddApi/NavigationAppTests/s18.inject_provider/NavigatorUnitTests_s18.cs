@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace NavigationApp.s17.fill_controller
+namespace NavigationApp.s18.inject_provider
 {
     [TestClass]
     public class NavigatorUnitTests_s18
