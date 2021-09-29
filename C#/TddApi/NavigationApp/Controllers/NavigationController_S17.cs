@@ -12,10 +12,11 @@ namespace NavigationApp.Controllers
       
         [HttpGet]
         [Route("distance")]
-        public ActionResult Distance()
+        public Distance Distance()
         {
-            return Ok(nav.getDistanceFromDestination());
+            return nav.getDistanceFromDestination();
         }
+        
 
         [HttpPost]
         [Route("destination")]

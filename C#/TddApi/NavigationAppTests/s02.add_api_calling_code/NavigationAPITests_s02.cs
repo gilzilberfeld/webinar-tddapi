@@ -19,7 +19,7 @@ namespace NavigationApp.s02.add_api_calling_code
 			Location location = new Location("New York");
 			await setStartPoint(location);
 			await setDestination(location);
-			Assert.AreEqual(0, distanceToDestination());
+			Assert.AreEqual(0, await distanceToDestination());
 		}
 
 		[TestMethod]

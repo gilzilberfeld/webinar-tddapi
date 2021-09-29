@@ -19,7 +19,7 @@ namespace NavigationApp.s08.added_ut
 			Location location = new Location("New York");
             await setStartPoint(location);
             await setDestination(location);
-            Assert.AreEqual(0, distanceToDestination());
+            Assert.AreEqual(0, await distanceToDestination());
 		}
 
 		[TestMethod]

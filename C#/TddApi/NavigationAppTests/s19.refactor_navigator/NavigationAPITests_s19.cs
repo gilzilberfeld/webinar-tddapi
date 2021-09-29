@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace NavigationApp.s18.inject_provider
+namespace NavigationApp.s19.refactor_navigator
 {
     [TestClass]
-    public class NavigationAPITests_s18
+    public class NavigationAPITests_s19
     {
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace NavigationApp.s18.inject_provider
         {
             var content = new StringContent(JsonConvert.SerializeObject(location),
                 Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("/navigator18/destination", content);
+            var response = await client.PostAsync("/navigator19/destination", content);
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
@@ -70,7 +70,7 @@ namespace NavigationApp.s18.inject_provider
         {
             var content = new StringContent(JsonConvert.SerializeObject(location),
                 Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("/navigator18/startpoint", content);
+            var response = await client.PostAsync("/navigator19/startpoint", content);
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
@@ -81,7 +81,7 @@ namespace NavigationApp.s18.inject_provider
 
         private async Task<int> distanceToDestination()
         {
-            var response = await client.GetAsync("/navigator18/distance");
+            var response = await client.GetAsync("/navigator19/distance");
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             var body = await response.Content.ReadAsStringAsync();
             Distance distance = JsonConvert.DeserializeObject<Distance>(body);

@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NavigationApp.s18.inject_provider;
+using NavigationApp.s19.refactor_navigator;
 
 namespace NavigationApp.Controllers
 {
     [ApiController]
-    [Route("navigator18")]
-    public class NavigationController_S18 : ControllerBase
+    [Route("navigator19")]
+    public class NavigationController_S19 : ControllerBase
     {
         Navigator nav;
         DistanceProvider distanceProvider;
-        public NavigationController_S18(DistanceProvider distProvider)
+        public NavigationController_S19(DistanceProvider distProvider)
         {
             distanceProvider = distProvider;
+            nav = new Navigator(distProvider);
         }
 
         [HttpGet]
@@ -34,7 +35,7 @@ namespace NavigationApp.Controllers
         [Route("startpoint")]
         public ActionResult StartPoint(Location loc)
         {
-            nav = new Navigator(loc, distanceProvider);
+            nav.setStartingPoint(loc);
             return Ok();
         }
     }
