@@ -3,9 +3,9 @@ from unittest.mock import patch
 
 from hamcrest import assert_that, equal_to
 
-from s12_re_add_second_test.distance import Distance
-from s12_re_add_second_test.location import Location
-from s12_re_add_second_test.navigator import Navigator
+from s13_pass_unit_test.distance import Distance
+from s13_pass_unit_test.location import Location
+from s13_pass_unit_test.navigator import Navigator
 
 
 class NavigatorUnitTests(unittest.TestCase):
@@ -28,6 +28,7 @@ class NavigatorUnitTests(unittest.TestCase):
         nav.setDestination(dest)
         distance = nav.getDistanceFromDestination()
         assert_that(distance.inKm(), equal_to(4000))
+
 
 
 if __name__ == '__main__':

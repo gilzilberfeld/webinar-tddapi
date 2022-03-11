@@ -18,16 +18,14 @@ class NavigatorUnitTests(unittest.TestCase):
         distance = nav.getDistanceFromDestination()
         assert_that(distance.inKm(), equal_to(0))
 
-    def test_distance_is_calculated_in_km(self):
-        """2500 miles = 4000 kms"""
-        distProvider = patch('s11_mock_adapter.distance_adapter.DistanceAdapter').start()
-        distProvider.get_distance.return_value = Distance(2500)
-        startingPoint = Location("New York City")
-        nav = Navigator(startingPoint, distProvider)
-        dest = Location("Los Angeles")
-        nav.setDestination(dest)
-        distance = nav.getDistanceFromDestination()
-        assert_that(distance.inKm(), equal_to(4000))
+    # def test_distance_is_calculated_in_km(self):
+    #     """2500 miles = 4000 kms"""
+    #     startingPoint = Location("New York City")
+    #     nav = Navigator(startingPoint)
+    #     dest = Location("Los Angeles")
+    #     nav.setDestination(dest)
+    #     distance = nav.getDistanceFromDestination()
+    #     assert_that(distance.inKm(), equal_to(4000))
 
 
 if __name__ == '__main__':
