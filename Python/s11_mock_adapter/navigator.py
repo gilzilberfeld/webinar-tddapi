@@ -1,6 +1,3 @@
-from s10_refactor_provider.distance import Distance
-
-
 class Navigator:
     def __init__(self, starting_point, dist_provider):
         self.dist_provider = dist_provider
