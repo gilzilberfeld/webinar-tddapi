@@ -2,9 +2,9 @@ import unittest
 
 from hamcrest import assert_that, equal_to
 
-from s09_refactor_first_test.distance_adapter import DistanceAdapter
-from s09_refactor_first_test.location import Location
-from s09_refactor_first_test.navigator import Navigator
+from s10_refactor_provider.location import Location
+from s10_refactor_provider.navigator import Navigator
+from s10_refactor_provider.distance_adapter import DistanceAdapter
 
 
 class NavigatorUnitTests(unittest.TestCase):
