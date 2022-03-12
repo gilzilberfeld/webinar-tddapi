@@ -6,7 +6,7 @@ class Navigator:
         self.dist_provider = dist_provider
         pass
 
-    def getDistanceFromDestination(self):
+    def get_distance_from_destination(self):
         return Distance(0)
 
     def setDestination(self, dest):

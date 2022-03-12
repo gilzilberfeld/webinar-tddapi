@@ -3,5 +3,5 @@ class NotInitialized(Exception):
 
 
 class Navigator:
-    def getDistanceFromDestination(self):
+    def get_distance_from_destination(self):
         pass

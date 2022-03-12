@@ -12,7 +12,7 @@ class NavigatorUnitTests(unittest.TestCase):
         loc = Location("London")
         distProvider = DistanceAdapter()
         nav = Navigator(loc, distProvider)
-        distance = nav.getDistanceFromDestination()
+        distance = nav.get_distance_from_destination()
         assert_that(distance.inKm(), equal_to(0))
 
     # def test_distance_is_calculated_in_km(self):

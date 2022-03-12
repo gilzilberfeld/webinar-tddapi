@@ -30,17 +30,19 @@ class NavigatorAPITests(unittest.TestCase):
         assert_that(self.distanceToDestination(), equal_to(less_than(initialDistance)))
 
     def setStartPoint(self, location):
-        response = self.app.post("/navigator/startpoint",
-                                 data=json.dumps(location))
+        response = self.app.post("/nav/startpoint",
+                                 content_type='application/json',
+                                 data=json.dumps(location.__dict__))
         self.assertEqual(200, response.status_code)
 
     def setDestination(self, location):
-        response = self.app.post("/navigator/destination",
-                                 data=json.dumps(location))
+        response = self.app.post("/nav/destination",
+                                 content_type='application/json',
+                                 data=json.dumps(location.__dict__))
         self.assertEqual(200, response.status_code)
 
     def distanceToDestination(self):
-        response = self.app.get("/navigator/distance")
+        response = self.app.get("/nav/distance")
         self.assertEqual(200, response.status_code)
         distance = Distance(json.loads(response.data))
         return distance.inKm()

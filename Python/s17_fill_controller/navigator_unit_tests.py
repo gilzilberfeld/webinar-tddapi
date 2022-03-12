@@ -3,9 +3,9 @@ from unittest.mock import patch
 
 from hamcrest import assert_that, equal_to
 
-from s16_pass_unit_test.distance import Distance
-from s16_pass_unit_test.location import Location
-from s16_pass_unit_test.navigator import Navigator
+from s17_fill_controller.distance import Distance
+from s17_fill_controller.location import Location
+from s17_fill_controller.navigator import Navigator
 
 
 class NavigatorUnitTests(unittest.TestCase):

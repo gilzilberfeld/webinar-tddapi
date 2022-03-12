@@ -15,7 +15,7 @@ class NavigatorUnitTests(unittest.TestCase):
     def test_when_created_distance_is_always_zero(self):
         self.set_distance_to(0)
         nav = Navigator(Location("London"), self.distProvider)
-        distance = nav.getDistanceFromDestination()
+        distance = nav.get_distance_from_destination()
         assert_that(distance.inKm(), equal_to(0))
 
     def test_distance_is_calculated_in_km(self):
@@ -23,8 +23,8 @@ class NavigatorUnitTests(unittest.TestCase):
         self.set_distance_to(2500)
         startingPoint = Location("New York City")
         nav = Navigator(startingPoint, self.distProvider)
-        nav.setDestination(Location("Los Angeles"))
-        distance = nav.getDistanceFromDestination()
+        nav.set_destination(Location("Los Angeles"))
+        distance = nav.get_distance_from_destination()
         assert_that(distance.inKm(), equal_to(4000))
 
     def test_provider_called_correctly(self):
@@ -32,8 +32,8 @@ class NavigatorUnitTests(unittest.TestCase):
         dest = Location("Los Angeles")
 
         nav = Navigator(startingPoint, self.distProvider)
-        nav.setDestination(dest)
-        nav.getDistanceFromDestination()
+        nav.set_destination(dest)
+        nav.get_distance_from_destination()
         self.distProvider.get_distance.assert_called_with(startingPoint, dest)
 
     def set_distance_to(self, miles):

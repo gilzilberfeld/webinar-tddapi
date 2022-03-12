@@ -3,9 +3,9 @@ import unittest
 
 from hamcrest import assert_that, equal_to, less_than
 
-from s13_pass_unit_test.distance import Distance
-from s13_pass_unit_test.navigation_controller import app
-from s13_pass_unit_test.location import Location
+from s17_fill_controller.distance import Distance
+from s17_fill_controller.navigation_controller import app
+from s17_fill_controller.location import Location
 
 
 class NavigatorAPITests(unittest.TestCase):
