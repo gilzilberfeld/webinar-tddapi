@@ -9,33 +9,33 @@ class NavigatorAPITests(unittest.TestCase):
 	def test_navigate_to_same_location_distance_is_zero(self):
 		location = Location("New York")
 		self.set_start_point(location)
-		self.setDestination(location)
-		assert_that(self.distanceToDestination(), equal_to(0))
+		self.set_destination(location)
+		assert_that(self.distance_to_destination(), equal_to(0))
 
 	def test_navigate_and_drive_to_another_location_distance_is_reduced(self):
 		initialLocation = Location("New York")
 		self.set_start_point(initialLocation)
 
 		destination = Location("Los Angeles")
-		self.setDestination(destination)
+		self.set_destination(destination)
 
-		initialDistance = self.distanceToDestination()
+		initialDistance = self.distance_to_destination()
 
 		midLocation = Location("Dallas")
-		self.driveTo(midLocation)
+		self.drive_to(midLocation)
 
-		assert_that(self.distanceToDestination(), equal_to(less_than(initialDistance)))
+		assert_that(self.distance_to_destination(), equal_to(less_than(initialDistance)))
 
 	def set_start_point(self, location):
 		pass
 
-	def setDestination(self, location):
+	def set_destination(self, location):
 		pass
 
-	def distanceToDestination(self):
+	def distance_to_destination(self):
 		return -1
 
-	def driveTo(self, midLocation):
+	def drive_to(self, midLocation):
 		pass
 
 
