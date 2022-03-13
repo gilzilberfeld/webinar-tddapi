@@ -10,7 +10,7 @@ from s13_pass_unit_test.navigator import Navigator
 
 class NavigatorUnitTests(unittest.TestCase):
     def test_when_created_distance_is_always_zero(self):
-        distProvider = patch('s11_mock_adapter.distance_adapter.DistanceAdapter').start()
+        distProvider = patch('s13_pass_unit_test.distance_adapter.DistanceAdapter').start()
         distProvider.get_distance.return_value = Distance(0)
 
         loc = Location("London")

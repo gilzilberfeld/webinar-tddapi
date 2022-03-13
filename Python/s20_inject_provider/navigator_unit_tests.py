@@ -3,18 +3,19 @@ from unittest.mock import patch
 
 from hamcrest import assert_that, equal_to
 
-from s16_pass_unit_test.distance import Distance
-from s16_pass_unit_test.location import Location
-from s16_pass_unit_test.navigator import Navigator
+from s20_inject_provider.distance import Distance
+from s20_inject_provider.location import Location
+from s20_inject_provider.navigator import Navigator
 
 
 class NavigatorUnitTests(unittest.TestCase):
     def setUp(self):
-        self.distProvider = patch('s16_pass_unit_test.distance_adapter.DistanceAdapter').start()
+        self.distProvider = patch('s20_inject_provider.distance_adapter.DistanceAdapter').start()
 
     def test_when_created_distance_is_always_zero(self):
         self.set_distance_to(0)
-        nav = Navigator(Location("London"), self.distProvider)
+        nav = Navigator(self.distProvider)
+        nav.set_start_point(Location("London"))
         distance = nav.get_distance_from_destination()
         assert_that(distance.inKm(), equal_to(0))
 
@@ -22,7 +23,8 @@ class NavigatorUnitTests(unittest.TestCase):
         """2500 miles = 4000 kms"""
         self.set_distance_to(2500)
         startingPoint = Location("New York City")
-        nav = Navigator(startingPoint, self.distProvider)
+        nav = Navigator(self.distProvider)
+        nav.set_start_point(startingPoint)
         nav.set_destination(Location("Los Angeles"))
         distance = nav.get_distance_from_destination()
         assert_that(distance.inKm(), equal_to(4000))
@@ -30,8 +32,8 @@ class NavigatorUnitTests(unittest.TestCase):
     def test_provider_called_correctly(self):
         startingPoint = Location("New York City")
         dest = Location("Los Angeles")
-
-        nav = Navigator(startingPoint, self.distProvider)
+        nav = Navigator(self.distProvider)
+        nav.set_start_point(startingPoint)
         nav.set_destination(dest)
         nav.get_distance_from_destination()
         self.distProvider.get_distance.assert_called_with(startingPoint, dest)

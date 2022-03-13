@@ -10,7 +10,7 @@ from s14_refactor_test.navigator import Navigator
 
 class NavigatorUnitTests(unittest.TestCase):
     def setUp(self) :
-        self.distProvider = patch('s11_mock_adapter.distance_adapter.DistanceAdapter').start()
+        self.distProvider = patch('s14_refactor_test.distance_adapter.DistanceAdapter').start()
 
     def test_when_created_distance_is_always_zero(self):
         self.set_distance_to(0)
