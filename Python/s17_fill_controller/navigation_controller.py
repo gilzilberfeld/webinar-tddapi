@@ -13,6 +13,7 @@ def set_destination():
     content = request.json
     dest = Location(content['city'])
     nav.set_destination(dest)
+    return ('', 200)
 
 
 @app.route('/nav/startpoint', methods=['POST'])
@@ -25,4 +26,4 @@ def set_start_point():
 
 @app.route('/nav/distance', methods=['GET'])
 def get_distance(self):
-    return nav.get_distance_from_destination()
+    return nav.get_distance_from_destination().__dict__

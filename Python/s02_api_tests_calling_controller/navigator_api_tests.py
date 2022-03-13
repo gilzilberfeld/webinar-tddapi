@@ -44,7 +44,7 @@ class NavigatorAPITests(unittest.TestCase):
     def distanceToDestination(self):
         response = self.app.get("/nav/distance")
         self.assertEqual(200, response.status_code)
-        distance = Distance(json.loads(response.data))
+        distance = Distance(response.get_json()['miles'])
         return distance.inKm()
 
     def driveTo(self, location):
