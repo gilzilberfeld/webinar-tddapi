@@ -27,7 +27,7 @@ class NavigatorAPITests(unittest.TestCase):
         midLocation = Location("Dallas")
         self.drive_to(midLocation)
 
-        assert_that(self.distance_to_destination(), equal_to(less_than(initialDistance)))
+        assert_that(self.distance_to_destination(), less_than(initialDistance))
 
     def set_start_point(self, location):
         response = self.app.post("/nav/startpoint",

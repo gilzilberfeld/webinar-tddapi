@@ -2,7 +2,7 @@ import unittest
 
 from hamcrest import assert_that, equal_to, less_than
 
-from s01_empty_api_tests.location import Location
+from s02_empty_api_tests.location import Location
 
 
 class NavigatorAPITests(unittest.TestCase):
@@ -24,7 +24,7 @@ class NavigatorAPITests(unittest.TestCase):
 		midLocation = Location("Dallas")
 		self.drive_to(midLocation)
 
-		assert_that(self.distance_to_destination(), equal_to(less_than(initialDistance)))
+		assert_that(self.distance_to_destination(), less_than(initialDistance))
 
 	def set_start_point(self, location):
 		pass
