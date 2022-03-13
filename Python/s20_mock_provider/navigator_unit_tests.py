@@ -3,14 +3,14 @@ from unittest.mock import patch
 
 from hamcrest import assert_that, equal_to
 
-from s20_inject_provider.distance import Distance
-from s20_inject_provider.location import Location
-from s20_inject_provider.navigator import Navigator
+from s20_mock_provider.distance import Distance
+from s20_mock_provider.location import Location
+from s20_mock_provider.navigator import Navigator
 
 
 class NavigatorUnitTests(unittest.TestCase):
     def setUp(self):
-        self.distProvider = patch('s20_inject_provider.distance_adapter.DistanceAdapter').start()
+        self.distProvider = patch('s20_mock_provider.distance_adapter.DistanceAdapter').start()
 
     def test_when_created_distance_is_always_zero(self):
         self.set_distance_to(0)

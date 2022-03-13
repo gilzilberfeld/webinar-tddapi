@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 
-from s20_inject_provider.distance_adapter import DistanceAdapter
-from s20_inject_provider.location import Location
-from s20_inject_provider.navigator import Navigator
+from s20_mock_provider.distance_adapter import DistanceAdapter
+from s20_mock_provider.location import Location
+from s20_mock_provider.navigator import Navigator
 
 app = Flask(__name__)
 distProvider = DistanceAdapter()

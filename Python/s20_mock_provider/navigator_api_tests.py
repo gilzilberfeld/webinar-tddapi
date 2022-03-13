@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 from hamcrest import assert_that, equal_to, less_than
 
-from s20_inject_provider.distance import Distance
-from s20_inject_provider.navigation_controller import app, nav
-from s20_inject_provider.location import Location
+from s20_mock_provider.distance import Distance
+from s20_mock_provider.navigation_controller import app, nav
+from s20_mock_provider.location import Location
 
 
 class NavigatorAPITests(unittest.TestCase):
     def test_navigate_to_same_location_distance_is_zero(self):
         self.set_distance_to(0)
         location = Location("New York")
-        self.setStartPoint(location)
+        self.set_start_point(location)
         self.setDestination(location)
         assert_that(self.distanceToDestination(), equal_to(0))
 
@@ -21,7 +21,7 @@ class NavigatorAPITests(unittest.TestCase):
         self.set_distances_to(2500, 1400)
 
         initialLocation = Location("New York")
-        self.setStartPoint(initialLocation)
+        self.set_start_point(initialLocation)
 
         destination = Location("Los Angeles")
         self.setDestination(destination)
@@ -33,7 +33,7 @@ class NavigatorAPITests(unittest.TestCase):
 
         assert_that(self.distanceToDestination(), less_than(initialDistance))
 
-    def setStartPoint(self, location):
+    def set_start_point(self, location):
         response = self.app.post("/nav/startpoint",
                                  content_type='application/json',
                                  data=json.dumps(location.__dict__))
@@ -52,7 +52,7 @@ class NavigatorAPITests(unittest.TestCase):
         return distance.inKm()
 
     def driveTo(self, location):
-        self.setStartPoint(location)
+        self.set_start_point(location)
 
     def set_distance_to(self, miles):
         nav.dist_provider.get_distance.return_value = Distance(miles)
@@ -62,7 +62,7 @@ class NavigatorAPITests(unittest.TestCase):
 
     def setUp(self):
         self.app = app.test_client(self)
-        nav.dist_provider = patch('s20_inject_provider.distance_adapter.DistanceAdapter').start()
+        nav.dist_provider = patch('s20_mock_provider.distance_adapter.DistanceAdapter').start()
 
 
 if __name__ == '__main__':

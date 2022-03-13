@@ -1,4 +1,4 @@
-from s20_inject_provider.distance import Distance
+from s20_mock_provider.distance import Distance
 
 
 class DistanceAdapter:
