@@ -12,7 +12,7 @@ class NavigatorAPITests(unittest.TestCase):
     def test_navigate_to_same_location_distance_is_zero(self):
         location = Location("New York")
         self.set_start_point(location)
-        self.setDestination(location)
+        self.set_destination(location)
         assert_that(self.distanceToDestination(), equal_to(0))
 
     def test_navigate_and_drive_to_another_location_distance_is_reduced(self):
@@ -20,7 +20,7 @@ class NavigatorAPITests(unittest.TestCase):
         self.set_start_point(initialLocation)
 
         destination = Location("Los Angeles")
-        self.setDestination(destination)
+        self.set_destination(destination)
 
         initialDistance = self.distanceToDestination()
 
@@ -35,7 +35,7 @@ class NavigatorAPITests(unittest.TestCase):
                                  data=json.dumps(location.__dict__))
         self.assertEqual(200, response.status_code)
 
-    def setDestination(self, location):
+    def set_destination(self, location):
         response = self.app.post("/nav/destination",
                                  content_type='application/json',
                                  data=json.dumps(location.__dict__))
